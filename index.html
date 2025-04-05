@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digimon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="digimon-icon.png" />
+  <title>Digimon App</title>
 </head>
 <body>
-    <h1>Pronto DigimonApi</h1>
+  <!-- Splash screen -->
+  <div id="splash">
+    <img src="digimon-icon.png" alt="Digimon Icon" />
+    <h1>Bienvenido a DigimonApp</h1>
+  </div>
+
+  <!-- Navegación por pestañas -->
+  <header>
+    <nav class="tabs">
+      <button onclick="mostrarSeccion('inicio')">Inicio</button>
+      <button onclick="mostrarSeccion('buscar')">Buscar</button>
+      <button onclick="mostrarSeccion('filtro')">Filtro</button>
+      <button onclick="mostrarSeccion('favoritos')">Favoritos</button>
+      <button onclick="mostrarSeccion('registro')">Registro</button>
+      <button onclick="mostrarSeccion('extra')">Extra</button>
+    </nav>
+  </header>
+
+  <!-- Contenido -->
+  <main>
+    <section id="inicio" class="seccion activa">
+      <h2>Lista de Digimons</h2>
+      <div id="digimon-lista"></div>
+    </section>
+
+    <section id="buscar" class="seccion">
+      <input type="text" id="buscador" placeholder="Buscar Digimon por nombre" />
+      <div id="resultado-busqueda"></div>
+    </section>
+
+    <section id="filtro" class="seccion">
+      <select id="nivel-filtro">
+        <option value="">Filtrar por nivel</option>
+        <option value="Rookie">Rookie</option>
+        <option value="Champion">Champion</option>
+        <option value="Ultimate">Ultimate</option>
+      </select>
+      <div id="resultado-filtro"></div>
+    </section>
+
+    <section id="favoritos" class="seccion">
+      <h2>Mis Digimon Favoritos</h2>
+      <div id="lista-favoritos"></div>
+    </section>
+
+    <section id="registro" class="seccion">
+      <h2>Registro</h2>
+      <form id="formulario-registro">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo" required />
+        <input type="text" placeholder="Usuario" required />
+        <input type="password" placeholder="Contraseña" required />
+        <input type="text" placeholder="País" />
+        <input type="text" placeholder="Edad" />
+        <input type="text" placeholder="Tu Digimon favorito" />
+        <button type="submit">Registrarse</button>
+      </form>
+    </section>
+
+    <section id="extra" class="seccion">
+      <h2>Curiosidades Digimon (🎁 Feature única)</h2>
+      <p>¿Sabías que Agumon evoluciona según los lazos que tiene con su entrenador? 💛</p>
+    </section>
+  </main>
+
+  <!-- Menú inferior -->
+  <footer>
+    <nav class="menu-inferior">
+      <button onclick="mostrarSeccion('inicio')">🏠</button>
+      <button onclick="mostrarSeccion('buscar')">🔍</button>
+      <button onclick="mostrarSeccion('favoritos')">⭐</button>
+      <button onclick="mostrarSeccion('registro')">📝</button>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
