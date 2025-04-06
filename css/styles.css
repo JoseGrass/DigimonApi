@@ -133,6 +133,14 @@ form {
   font-size: 0.9rem;
   margin-bottom: 0.2rem;
 }
+.curiosidad-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
 
 /* ==== Responsivo tablets ==== */
 @media (max-width: 768px) {
