@@ -1,16 +1,31 @@
-export function setupFiltro(selectId, data, renderFn) {
-    const select = document.getElementById(selectId);
-    const niveles = [...new Set(data.map(d => d.level))];
+// filtro.js
+document.addEventListener("DOMContentLoaded", function () {
+    const nivelFiltro = document.getElementById("nivelFiltro");
+    const filteredResults = document.getElementById("filteredResults");
   
-    select.innerHTML = `<option value="">Todos</option>`;
-    niveles.forEach(n => {
-      select.innerHTML += `<option value="${n}">${n}</option>`;
-    });
+    if (nivelFiltro && filteredResults) {
+      nivelFiltro.addEventListener("change", () => {
+        const nivel = nivelFiltro.value;
+        obtenerDigimons(data => {
+          const filtrados = nivel ? data.filter(d => d.level.toLowerCase() === nivel.toLowerCase()) : data;
+          mostrarFiltrados(filtrados);
+        });
+      });
+    }
   
-    select.addEventListener('change', () => {
-      const nivel = select.value;
-      const filtrado = nivel ? data.filter(d => d.level === nivel) : data;
-      renderFn(filtrado);
-    });
-  }
+    function mostrarFiltrados(lista) {
+      filteredResults.innerHTML = "";
+      lista.forEach(digimon => {
+        const card = document.createElement("div");
+        card.className = "digimon-card";
+        card.innerHTML = `
+          <h3>${digimon.name}</h3>
+          <img src="${digimon.img}" alt="${digimon.name}">
+          <p>${digimon.level}</p>
+          <button onclick="agregarAFavoritos('${digimon.name}')">❤️</button>
+        `;
+        filteredResults.appendChild(card);
+      });
+    }
+  });
   

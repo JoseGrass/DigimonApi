@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digimon API App</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
 
   <header>
     <h1>Digimon App</h1>
     <nav class="tabs">
-      <button data-tab="home">Inicio</button>
-      <button data-tab="digimons">Digimons</button>
-      <button data-tab="buscar">Buscar</button>
-      <button data-tab="filtrar">Filtrar</button>
-      <button data-tab="favoritos">Favoritos</button>
-      <button data-tab="registro">Registro</button>
+      <button class="tab" data-tab="home">Inicio</button>
+      <button class="tab" data-tab="buscar">Buscar</button>
+      <button class="tab" data-tab="filtrar">Filtrar</button>
+      <button class="tab" data-tab="favoritos">Favoritos</button>
+      <button class="tab" data-tab="registro">Registro</button>
     </nav>
   </header>
 
   <main>
     <section id="home" class="tab-content active">
       <h2>Bienvenido a la Digimon App</h2>
-    </section>
-
-    <section id="digimons" class="tab-content">
       <div id="digimon-list"></div>
     </section>
 
     <section id="buscar" class="tab-content">
-      <input type="text" id="searchInput" placeholder="Buscar Digimon por nombre...">
+      <input type="text" id="searchInput" placeholder="Buscar Digimon por nombre..." />
       <div id="searchResults"></div>
     </section>
 
@@ -53,17 +49,17 @@
     <section id="registro" class="tab-content">
       <h2>Formulario de Registro</h2>
       <form id="formRegistro">
-        <input type="text" placeholder="Nombre" required>
-        <input type="text" placeholder="Apellido" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Contraseña" required>
-        <input type="date" required>
-        <select required>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <input type="password" id="password" name="password" placeholder="Contraseña" required />
+        <input type="date" id="fecha" name="fecha" required />
+        <select id="genero" name="genero" required>
           <option value="">Género</option>
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
         </select>
-        <input type="text" placeholder="Digimon Favorito" required>
+        <input type="text" id="digimonFavorito" name="digimonFavorito" placeholder="Digimon Favorito" required />
         <button type="submit">Registrar</button>
       </form>
     </section>
@@ -71,10 +67,9 @@
 
   <footer>
     <nav class="menu-inferior">
-      <button data-tab="home">🏠</button>
-      <button data-tab="digimons">👾</button>
-      <button data-tab="favoritos">❤️</button>
-      <button data-tab="registro">📝</button>
+      <button class="tab" data-tab="home">🏠</button>
+      <button class="tab" data-tab="favoritos">❤️</button>
+      <button class="tab" data-tab="registro">📝</button>
     </nav>
   </footer>
 
@@ -83,7 +78,28 @@
   <script src="js/api.js"></script>
   <script src="js/buscador.js"></script>
   <script src="js/filtro.js"></script>
-  <script src="js/favoritos.js"></script>
+  <script src="js/favorito.js"></script>
   <script src="js/registro.js"></script>
+
+  <!-- Mostrar Digimon en inicio -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const digimonList = document.getElementById("digimon-list");
+
+      obtenerDigimons(data => {
+        data.forEach(digimon => {
+          const div = document.createElement("div");
+          div.className = "digimon-card";
+          div.innerHTML = `
+            <h3>${digimon.name}</h3>
+            <img src="${digimon.img}" alt="${digimon.name}">
+            <p>${digimon.level}</p>
+            <button onclick="agregarAFavoritos('${digimon.name}')">❤️</button>
+          `;
+          digimonList.appendChild(div);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

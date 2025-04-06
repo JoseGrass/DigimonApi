@@ -1,15 +1,16 @@
-export function initTabs() {
-    const tabs = document.querySelectorAll('.tabs button');
-    const contents = document.querySelectorAll('.tab-content');
+// ui.js
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll("nav.tabs button, .menu-inferior button");
+    const sections = document.querySelectorAll("section.tab-content");
   
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
   
-        tab.classList.add('active');
-        contents[index].classList.add('active');
+        sections.forEach(section => {
+          section.classList.toggle("active", section.id === target);
+        });
       });
     });
-  }
+  });
   

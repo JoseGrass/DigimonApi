@@ -1,4 +1,4 @@
-export function setupFormulario(formId) {
+function setupFormulario(formId) {
     const form = document.getElementById(formId);
   
     form.addEventListener('submit', e => {

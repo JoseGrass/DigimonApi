@@ -96,12 +96,45 @@ form {
   margin: 0 auto;
 }
 
-img {
-  max-width: 100px;
-  display: block;
-  margin: 0.5rem auto;
+/* ==== Digimon Card Grid & Diseño ==== */
+#digimon-list,
+#searchResults,
+#filteredResults,
+#favList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
+.digimon-card {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.digimon-card:hover {
+  transform: scale(1.03);
+}
+
+.digimon-card img {
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.digimon-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.digimon-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ==== Responsivo tablets ==== */
 @media (max-width: 768px) {
   .tabs {
     flex-direction: column;
@@ -120,5 +153,27 @@ img {
   .menu-inferior button {
     font-size: 1.3rem;
     margin: 0.2rem 0;
+  }
+}
+
+/* ==== Responsivo para móviles pequeños ==== */
+@media (max-width: 480px) {
+  #digimon-list,
+  #searchResults,
+  #filteredResults,
+  #favList {
+    grid-template-columns: 1fr;
+  }
+
+  .digimon-card img {
+    width: 80px;
+  }
+
+  .digimon-card h3 {
+    font-size: 1rem;
+  }
+
+  .digimon-card p {
+    font-size: 0.8rem;
   }
 }
