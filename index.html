@@ -11,16 +11,20 @@
 
   <header>
     <h1>Digimon App</h1>
-    <nav class="tabs">
-      <button class="tab" data-tab="home">Inicio</button>
-      <button class="tab" data-tab="buscar">Buscar</button>
-      <button class="tab" data-tab="filtrar">Filtrar</button>
-      <button class="tab" data-tab="favoritos">Favoritos</button>
-      <button class="tab" data-tab="registro">Registro</button>
-      <button class="tab" data-tab="curiosidades">Curiosidades</button>
-
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="nav-menu" id="navMenu">
+      <div class="tabs">
+        <button class="tab" data-tab="home">Inicio</button>
+        <button class="tab" data-tab="buscar">Buscar</button>
+        <button class="tab" data-tab="filtrar">Filtrar</button>
+        <button class="tab" data-tab="favoritos">Favoritos</button>
+        <button class="tab" data-tab="registro">Registro</button>
+        <button class="tab" data-tab="curiosidades">Curiosidades</button>
+      </div>
     </nav>
   </header>
+  
+  
 
   <main>
     <section id="home" class="tab-content active">
@@ -113,5 +117,12 @@
       });
     });
   </script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
