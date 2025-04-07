@@ -123,6 +123,32 @@
     document.getElementById('navMenu').classList.toggle('show');
   }
 </script>
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('show');
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".tab");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const targetTab = button.getAttribute("data-tab");
+
+        tabContents.forEach(content => {
+          content.classList.remove("active");
+        });
+
+        document.getElementById(targetTab).classList.add("active");
+
+        // Cierra el menú hamburguesa si está abierto
+        document.getElementById("navMenu")?.classList.remove("show");
+      });
+    });
+  });
+</script>
+
 
 </body>
 </html>

@@ -126,6 +126,13 @@ form {
   margin: 0 auto;
 }
 
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
 /* ==== Digimon Card Grid & Diseño ==== */
 #digimon-list,
 #searchResults,
