@@ -36,6 +36,7 @@ body{
     color: #ffffff;
     font-size: 2rem;
     text-align: center;
+    padding-top: 1rem;
  }
  .nav-menu{
     background-color: var(--primary-color);
@@ -119,4 +120,15 @@ main{
     justify-content: space-evenly;
     background-color: #ffffff;
     padding: 0.5rem 0;
+}
+
+/*para moviles*/
+
+@media (max-with: 568px){
+
+    .digimon-img{
+        width: 18rem;
+        height: auto;
+    }
+
 }
