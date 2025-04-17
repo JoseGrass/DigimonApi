@@ -82,6 +82,7 @@ main{
     text-align: center;
     border: #DDA853 solid 0.4rem;
     margin:1rem;
+    background-color: #ffffff;
 }
 .digimon-name{
     font-size: 1.7rem;
@@ -168,6 +169,7 @@ main{
     .digimon-img{
         width: 15rem;
         height: auto;
+        
     }
      
     .menu-options{
