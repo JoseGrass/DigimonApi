@@ -13,142 +13,48 @@
     <h1>Digimon App</h1>
     <button class="nav-toggle" onclick="toggleMenu()">☰</button>
     <nav class="nav-menu" id="navMenu">
-      <div class="tabs">
-        <button class="tab" data-tab="home">Inicio</button>
-        <button class="tab" data-tab="buscar">Buscar</button>
-        <button class="tab" data-tab="filtrar">Filtrar</button>
-        <button class="tab" data-tab="favoritos">Favoritos</button>
-        <button class="tab" data-tab="registro">Registro</button>
-        <button class="tab" data-tab="curiosidades">Curiosidades</button>
+      <div class="menu-options">
+        <button onclick="General()" >Inicio</button>
+        <button onclick="mostrarBuscador()">Buscar</button>
+        <button onclick="mostrarFiltro()" >Filtrar</button>
+        <button onclick="mostrarFavoritos()">Favoritos</button>
+        <button onclick="mostrarOriginal()">Funcionalidad </button>
+        <button onclick="mostrarInformacion()">Información</button>
       </div>
     </nav>
   </header>
   
   
 
-  <main>
-    <section id="home" class="tab-content active">
-      <h2>Bienvenido a la Digimon App</h2>
-      <div id="digimon-list"></div>
-    </section>
+  <main id="app">
 
-    <section id="buscar" class="tab-content">
-      <input type="text" id="searchInput" placeholder="Buscar Digimon por nombre..." />
-      <div id="searchResults"></div>
-    </section>
-
-    <section id="filtrar" class="tab-content">
-      <select id="nivelFiltro">
-        <option value="">Selecciona un nivel</option>
-        <option value="rookie">Rookie</option>
-        <option value="champion">Champion</option>
-        <option value="ultimate">Ultimate</option>
-      </select>
-      <div id="filteredResults"></div>
-    </section>
-
-    <section id="favoritos" class="tab-content">
-      <h2>Mis Favoritos</h2>
-      <div id="favList"></div>
-    </section>
-
-    <section id="registro" class="tab-content">
-      <h2>Formulario de Registro</h2>
-      <form id="formRegistro">
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
-        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
-        <input type="email" id="email" name="email" placeholder="Email" required />
-        <input type="password" id="password" name="password" placeholder="Contraseña" required />
-        <input type="date" id="fecha" name="fecha" required />
-        <select id="genero" name="genero" required>
-          <option value="">Género</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-        </select>
-        <input type="text" id="digimonFavorito" name="digimonFavorito" placeholder="Digimon Favorito" required />
-        <button type="submit">Registrar</button>
-      </form>
-    </section>
-
-    <section id="curiosidades" class="tab-content">
-      <h2>Curiosidades de Digimon</h2>
-      <div id="curiosidades-list"></div>
-    </section>
     
   </main>
 
   <footer>
     <nav class="menu-inferior">
-      <button class="tab" data-tab="home">🏠</button>
-      <button class="tab" data-tab="favoritos">❤️</button>
-      <button class="tab" data-tab="registro">📝</button>
-      <button class="tab" data-tab="curiosidades">💡</button>
+      <button onclick="General()">🏠</button>
+      <button onclick="mostrarFavoritos()">❤️</button>
+      <button onclick="mostrarOriginal()">🕹️</button>
+      <button onclick="mostrarInformacion()">💡</button>
 
     </nav>
   </footer>
 
   <!-- Scripts -->
-  <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
   <script src="js/buscador.js"></script>
   <script src="js/filtro.js"></script>
   <script src="js/favorito.js"></script>
-  <script src="js/registro.js"></script>
-  <script src="js/curiosidades.js"></script>
+  <script src="js/informacion.js"></script>
+  <script src="js/lista.js"></script>
+  <script src="js/original.js"></script>
 
-
-  <!-- Mostrar Digimon en inicio -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const digimonList = document.getElementById("digimon-list");
 
-      obtenerDigimons(data => {
-        data.forEach(digimon => {
-          const div = document.createElement("div");
-          div.className = "digimon-card";
-          div.innerHTML = `
-            <h3>${digimon.name}</h3>
-            <img src="${digimon.img}" alt="${digimon.name}">
-            <p>${digimon.level}</p>
-            <button onclick="agregarAFavoritos('${digimon.name}')">❤️</button>
-          `;
-          digimonList.appendChild(div);
-        });
-      });
-    });
-  </script>
+    document.addEventListener("DOMContentLoaded",General)
 
-<script>
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('show');
-  }
-</script>
-<script>
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('show');
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabButtons = document.querySelectorAll(".tab");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    tabButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const targetTab = button.getAttribute("data-tab");
-
-        tabContents.forEach(content => {
-          content.classList.remove("active");
-        });
-
-        document.getElementById(targetTab).classList.add("active");
-
-        // Cierra el menú hamburguesa si está abierto
-        document.getElementById("navMenu")?.classList.remove("show");
-      });
-    });
-  });
-</script>
-
+ </script>
 
 </body>
 </html>
