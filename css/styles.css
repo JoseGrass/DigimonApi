@@ -124,7 +124,7 @@ main{
 
 /*para moviles*/
 
-@media (max-width: 600px){
+@media (max-width: 650px){
 
     header{
         width: 100vw;
@@ -150,7 +150,6 @@ main{
      .nav-menu.active{
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
     
     
      }
@@ -167,7 +166,7 @@ main{
     }
 
     .digimon-img{
-        width: 12rem;
+        width: 15rem;
         height: auto;
     }
      
