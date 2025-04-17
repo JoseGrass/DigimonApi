@@ -54,6 +54,17 @@
 
     document.addEventListener("DOMContentLoaded",General)
 
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+
+      if (navMenu.classList.contains('active')) {
+        app.style.paddingTop = '27rem'; // Ajusta este valor al alto del menú
+      } else {
+        app.style.paddingTop = '7rem';
+      }
+    }
+
  </script>
 
 </body>
