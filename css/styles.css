@@ -12,12 +12,13 @@
  /*Tamaño de la letra para trabajar en 1rem=10px*/
  html{
      font-size: 62.5%;
+     height: 100%;
  }
 /*tamaño de letra y tipo de letra*/
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
-    
+    height: 100%;
 }
 
  .nav-toggle{
@@ -35,6 +36,13 @@ body{
     background-color: var(--primary-color);
     color: #ffffff;
     font-size: 2rem;
+    text-align: center;
+    padding-top: 1rem;
+ }
+
+ h2{
+    color: #ffffff;
+    font-size: 1.6rem;
     text-align: center;
     padding-top: 1rem;
  }
@@ -71,6 +79,7 @@ main{
  padding-bottom: 7rem;
  display: flex;
  width: 100%;
+ min-height: 100vh;
  flex-wrap: wrap;
  justify-content: space-evenly;
  background-color: rgb(39, 84, 138, 0.9);
@@ -122,6 +131,47 @@ main{
     background-color: #ffffff;
     padding: 0.5rem 0;
 }
+
+/* Buscador */
+.buscador-section {
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buscador-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#inputBuscar {
+    width: 80%;
+    max-width: 40rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border: 0.3rem solid var(--primary-color);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#inputBuscar:focus {
+    border-color: #DDA853;
+}
+
+.resultado-busqueda {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 
 /*para moviles*/
 
@@ -177,4 +227,13 @@ main{
         flex-direction: column;
         justify-content: space-evenly;
      }
+
+    #inputBuscar {
+        width: 90%;
+        font-size: 1.4rem;
+    }
+
+    .buscador-section h2 {
+        font-size: 1.8rem;
+    }
 }
