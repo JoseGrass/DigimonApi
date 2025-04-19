@@ -171,7 +171,16 @@ main{
     justify-content: center;
 }
 
-
+.select-filtro {
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    background-color: #fff;
+  }
+  
 
 /*para moviles*/
 
@@ -236,4 +245,11 @@ main{
     .buscador-section h2 {
         font-size: 1.8rem;
     }
+
+    .select-filtro {
+        width: 90%;
+        font-size: 1.6rem;
+        margin: 1rem auto;
+        display: block;
+      }
 }
