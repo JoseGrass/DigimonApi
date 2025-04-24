@@ -238,6 +238,7 @@ main{
         padding-bottom: 7rem;
         display: flex;
         width: 100%;;
+        background-color: rgb(39, 84, 138, 0.8);
     }
 
     .digimon-img{
