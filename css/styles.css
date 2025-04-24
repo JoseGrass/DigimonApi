@@ -86,7 +86,7 @@ main{
  min-height: 100vh;
  flex-wrap: wrap;
  justify-content: space-evenly;
- background-color: rgb(39, 84, 138, 0.8);
+
  flex: 1;
 }
 
