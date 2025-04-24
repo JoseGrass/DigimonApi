@@ -205,6 +205,11 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 1rem;
+  }
+
+  .batalla-digimones img {
+    width: 20rem;
   }
   .vs {
     font-size: 2rem;
@@ -279,6 +284,7 @@ main{
 
       .batalla-digimones {
         flex-direction: column;
+        padding: 1rem;
       }
     
       .batalla-digimones > div {
@@ -289,5 +295,4 @@ main{
         font-size: 1.5rem;
         margin: 1rem 0;
       }
-    }
 }
