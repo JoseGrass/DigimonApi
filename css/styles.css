@@ -25,6 +25,8 @@ body{
     display: none;
  }
 
+ 
+
  /*navegador*/
  header{
     position: fixed;
@@ -78,6 +80,8 @@ main{
  padding-top: 7rem;
  padding-bottom: 7rem;
  display: flex;
+ flex-wrap: wrap;
+ align-content: flex-start;
  width: 100%;
  min-height: 100vh;
  flex-wrap: wrap;
@@ -180,6 +184,22 @@ main{
     color: var(--primary-color);
     background-color: #fff;
   }
+
+  .digimon-favorito {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #F5EEDC;
+  }
+  
+
   
 
 /*para moviles*/
