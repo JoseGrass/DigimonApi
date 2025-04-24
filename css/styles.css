@@ -197,9 +197,24 @@ main{
     padding: 1rem 0;
     background-color: #F5EEDC;
   }
-  
 
-  
+  .batalla {
+    text-align: center;
+  }
+  .batalla-digimones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .vs {
+    font-size: 2rem;
+    margin: 0 1rem;
+  }
+  .ganador {
+    margin-top: 1rem;
+    color: gold;
+    font-size: 1.5rem;
+  }
 
 /*para moviles*/
 
@@ -261,4 +276,18 @@ main{
         margin: 1rem auto;
         display: block;
       }
+
+      .batalla-digimones {
+        flex-direction: column;
+      }
+    
+      .batalla-digimones > div {
+        max-width: 100%;
+      }
+    
+      .vs {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
+    }
 }
