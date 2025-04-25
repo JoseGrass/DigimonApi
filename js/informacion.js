@@ -15,6 +15,7 @@ function mostrarDatos(){
             <a href="https://github.com/JoseGrass/DigimonApi" target="_blank">
                 <p class="link">github.com/JoseGrass/DigimonApi</p>
             </a>
+            <h3>V 1.0.1</h3>
 
         </div>
     `;
