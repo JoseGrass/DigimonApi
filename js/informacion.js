@@ -10,7 +10,11 @@ function mostrarDatos(){
         <div class="contenido">
             <h2>DIGIMON API</h2>
             <h3>Jose Luis Grass Murillo</h3>
-            
+            <img class="contenido-img" src="https://s0.smartresize.com/wallpaper/533/654/HD-wallpaper-angemo-angemon-digimon-patamon.jpg" alt="digimon">
+            <p class="caja-azul">API con información de 239 digimones</p>
+            <a href="https://github.com/JoseGrass/DigimonApi" target="_blank">
+                <p class="link">github.com/JoseGrass/DigimonApi</p>
+            </a>
 
         </div>
     `;
