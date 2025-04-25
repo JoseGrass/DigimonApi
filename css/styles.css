@@ -235,17 +235,7 @@ main{
   display: flex; /* Flexbox para centrar el contenido */
 }
 
-  .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #27548A;
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px); /* 👈 Aquí está el desenfoque */
-    z-index: 0;
-  }
+
 /* Contenedor del contenido */
 .contenido {
   position: relative;
