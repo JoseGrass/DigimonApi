@@ -223,27 +223,29 @@ main{
 
 /* Fondo con imagen de pantalla completa */
 .informacion {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden; /* Evita el scroll */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex; /* Flexbox para centrar el contenido */
   justify-content: center;
   align-items: center;
-  display: flex; /* Flexbox para centrar el contenido */
 }
 
+/* Overlay con fondo desenfocado */
 .overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-image: url('https://s0.smartresize.com/wallpaper/913/520/HD-wallpaper-digimon-digimon-anime.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(8px); /* 👈 Aquí está el desenfoque */
+  filter: blur(4px); /* Menos desenfoque */
   z-index: 0;
 }
 
@@ -253,15 +255,16 @@ main{
   z-index: 2;
   text-align: center;
   padding: 20px;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh; /* Garantiza que ocupe al menos el 100vh */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para mejorar la legibilidad */
 }
-  
-  /* Títulos y párrafos */
+
+/* Títulos y párrafos */
 .contenido h2,
 .contenido h3,
 .contenido p {
