@@ -223,19 +223,17 @@ main{
 
 /* Fondo con imagen de pantalla completa */
 .informacion {
+  position: relative;
   width: 100%;
   height: 100vh;
-  position: relative;
-  overflow: hidden; /* Evita el scroll */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex; /* Flexbox para centrar el contenido */
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  overflow: hidden;
 }
 
-/* Overlay con fondo desenfocado */
+/* Overlay de fondo con imagen */
 .overlay {
   position: absolute;
   top: 0;
@@ -243,25 +241,25 @@ main{
   width: 100%;
   height: 100%;
   background-image: url('https://s0.smartresize.com/wallpaper/913/520/HD-wallpaper-digimon-digimon-anime.jpg');
-  background-size: cover;
+  background-size:cover;
   background-position: center;
-  filter: blur(4px); /* Menos desenfoque */
+  opacity: 0.5; /* en lugar de blur */
   z-index: 0;
 }
 
-/* Contenedor del contenido */
+/* Contenido centrado encima del fondo */
 .contenido {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   padding: 20px;
   width: 100%;
-  min-height: 100vh; /* Garantiza que ocupe al menos el 100vh */
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para mejorar la legibilidad */
+  background-color: rgba(0, 0, 0, 0.4); /* mejora legibilidad */
 }
 
 /* Títulos y párrafos */
@@ -281,7 +279,7 @@ main{
   margin: 20px 0;
 }
 
-/* Caja azul del primer párrafo */
+/* Caja azul destacada */
 .caja-azul {
   background-color: rgba(0, 102, 255, 0.8);
   padding: 10px 20px;
@@ -296,7 +294,6 @@ main{
   text-decoration: underline;
   cursor: pointer;
 }
-
 
 /*para moviles*/
 
