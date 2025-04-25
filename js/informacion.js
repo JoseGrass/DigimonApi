@@ -1,4 +1,4 @@
-function mostrarInformacion(){
+function mostrarDatos(){
     const app = document.getElementById("app");
     app.innerHTML = ""; // Limpiar antes de mostrar
 
