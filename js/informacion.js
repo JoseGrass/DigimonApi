@@ -12,9 +12,7 @@ function mostrarInformacion(){
             <h3>Jose Luis Grass Murillo</h3>
             
             <p class="caja-azul">API con información de 239 digimones</p>
-            <a href="https://github.com/JoseGrass/DigimonApi" target="_blank">
-                <p class="link">github.com/JoseGrass/DigimonApi</p>
-            </a>
+
         </div>
     `;
 
