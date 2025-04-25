@@ -21,8 +21,3 @@ function mostrarInformacion(){
 
     app.appendChild(tarjetaInformacion);
 }
-
-window.onload = function () {
-    mostrarInformacion();
-  };
-  
