@@ -2,19 +2,21 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open('Digimonapp-v1').then(cache => {
       return cache.addAll([
-        './',
-        './index.html',
-        './css/styles.css',
-        './js/api.js',
-        './js/buscador.js',
-        './js/filtro.js',
-        './js/favorito.js',
-        './js/informacion.js',
-        './js/lista.js',
-        './js/original.js',
-        './icons/logo_Digi.png',
-        './icons/DigimonLogo.png'
+        '/DigimonApi/',
+        '/DigimonApi/index.html',
+        '/DigimonApi/css/styles.css',
+        '/DigimonApi/js/api.js',
+        '/DigimonApi/js/buscador.js',
+        '/DigimonApi/js/filtro.js',
+        '/DigimonApi/js/favorito.js',  // revisa que se llame así exactamente
+        '/DigimonApi/js/informacion.js',
+        '/DigimonApi/js/lista.js',
+        '/DigimonApi/js/original.js',
+        '/DigimonApi/icons/logo_Digi.png',
+        '/DigimonApi/icons/DigimonLogo.png'
       ]);
+    }).catch(err => {
+      console.error('Error en cache.addAll:', err);
     })
   );
 });
