@@ -7,7 +7,7 @@ self.addEventListener('install', e => {
         '.',                    // Página principal (index.html)
         'index.html',
         'css/styles.css',
-        'js/app.js',
+        'js/api.js',
         'icons/logo_Digi.png',
         'icons/DigimonLogo.png'
       ]);
