@@ -76,5 +76,50 @@
 
  </script>
 
+ <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('Service Worker registrado ✅'))
+                .catch(error => console.log('Error al registrar SW:', error));
+        }
+
+        let deferredPrompt;
+
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault(); // Evita que aparezca automáticamente
+            deferredPrompt = e;
+
+            // Mostrar el botón personalizado
+            const btn = document.getElementById("btn-instalar");
+            if (btn) btn.style.display = "block";
+        });
+
+        document.getElementById("btn-instalar").addEventListener("click", async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt(); // Muestra el diálogo
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log("Resultado de instalación:", outcome);
+
+                // Ya no se necesita el prompt
+                deferredPrompt = null;
+                document.getElementById("btn-instalar").style.display = "none";
+            }
+        });
+
+        function esIOS() {
+            return /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+        }
+
+        if (esIOS()) {
+            const mensaje = document.createElement("div");
+            mensaje.innerHTML = `
+    <p>En iOS, toca <span style="font-weight:bold;">Compartir</span> y luego "Agregar a pantalla de inicio" para instalar.</p>
+  `;
+            document.getElementById("btn-instalar").replaceWith(mensaje);
+        }
+
+
+    </script>
+
 </body>
 </html>
