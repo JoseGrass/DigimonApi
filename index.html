@@ -17,6 +17,7 @@
   </script>
 </head>
 <body>
+  <button id="btn-instalar" style="display:none;">Instalar App</button>
 
   <header>
     <h1>Digimon App</h1>
@@ -120,6 +121,21 @@
 
 
     </script>
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "79762337-8152-44b3-a7ec-7c6421f7acd5",
+      notifyButton: {
+        enable: true,
+        icon: "icons/logo_Digi.png"
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
