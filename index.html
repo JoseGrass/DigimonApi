@@ -6,6 +6,15 @@
   <title>Digimon API App</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+          await OneSignal.init({
+          appId: "79762337-8152-44b3-a7ec-7c6421f7acd5",
+        });
+      });
+  </script>
 </head>
 <body>
 

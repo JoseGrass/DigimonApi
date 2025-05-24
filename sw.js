@@ -1,6 +1,6 @@
 self.addEventListener('install', e => {
     e.waitUntil(
-      caches.open('pokeapp-v1').then(cache => {
+      caches.open('Digimonapp-v1').then(cache => {
         return cache.addAll([
           '/',
           '/index.html',
