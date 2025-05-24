@@ -7,7 +7,7 @@
     "theme_color": "#4F1C51",
     "icons": [
       {
-        "src": "icons/logo_Digi.jpg",
+        "src": "icons/logo_Digi.png",
         "sizes": "192x192",
         "type": "image/png"
       },
